@@ -7,20 +7,21 @@
     .container {
         width: 100%;
         min-height: 100vh;
-        background: linear-gradient(135deg, #c2e0ff, #ffb3d6);
+        background:  #f5efb3;
         padding: 10px;
     }
     
-    .toDo {
+    .todolist {
         width: 100%;
         max-width: 500px;
-        background-color: rgba(255, 255, 255, 0.75);
+        background-color: #d1baf3;
         margin: 100px auto 20px;
         padding: 40px 30px 70px;
         border-radius: 10px;
+        position: relative;
     }
     
-    .toDo h1 {
+    .todolist h1 {
         margin-bottom: 30px;
         font-size: 30px;
         color: #232323;
@@ -28,8 +29,8 @@
         align-items: center;
     }
     
-    .toDo h1 img {
-        width: 30px;
+    .todolist h1 img {
+        width: 70px;
         margin-left: 10px;
     }
     
@@ -41,6 +42,7 @@
         border-radius: 30px;
         padding-left: 10px;
         margin-bottom: 25px;
+        border: 2px solid #7f49d7;
     }
     
     input {
@@ -61,16 +63,17 @@
         font-size: 16px;
         cursor: pointer;
         border-radius: 40px;
+        border: 2px solid #7f49d7;
     }
     
     #tombol:hover {
-        background: #d4c2f5;
-        color: #232323;
+        background: #f5efb3;
+        color: #7f49d7;
     }
     
     #listContainer li {
         list-style: none;
-        padding: 12px 8px 10px 50px;
+        padding: 10px 8px 10px 50px;
         font-size: 17px;
         border-bottom: 1px solid #ccc;
         user-select: none;
@@ -87,20 +90,20 @@
     }
     
     #listContainer li.done {
-        color: #888;
+        color: #ecfa99;
         text-decoration: line-through;
     }
     
     #listContainer li.done::before {
         content: "\2611";
-        color: #27ae60;
+        color: #f8f1a6;
     }
     
     #listContainer li span {
         position: absolute;
         right: 0;
         top: 0px;
-        color: #888;
+        color: #f8f1a6;
         width: 40px;
         height: 40px;
         font-size: 22px;
@@ -110,6 +113,22 @@
     }
     
     #listContainer li span:hover {
-        background: #ccc;
-        color: #fff;
+        background: #f8f1a6;
+        color: #7f49d7;
     }
+
+    #taskCount {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: #7f49d7;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+

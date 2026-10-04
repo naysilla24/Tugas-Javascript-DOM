@@ -1,6 +1,10 @@
+
+
+
 const inputTask = document.getElementById('inputTask');
 const listContainer = document.getElementById('listContainer');
 const tombol = document.getElementById('tombol');
+const taskCount = document.getElementById('taskCount');
 
 tombol.onclick = function() {
     if (inputTask.value === '') {
@@ -15,6 +19,7 @@ tombol.onclick = function() {
         inputTask.value = '';
     }
     saveData();
+    updateTaskCount();
 }
 
 listContainer.addEventListener('click', function(e) {
@@ -25,6 +30,7 @@ listContainer.addEventListener('click', function(e) {
         e.target.parentElement.remove();
     }
     saveData();
+    updateTaskCount();
 });
 
 function saveData() {
@@ -35,4 +41,10 @@ function showTask() {
     listContainer.innerHTML = localStorage.getItem('data');
 }
 
+function updateTaskCount() {
+    const unfinishedTasks = listContainer.querySelectorAll('li:not(.done)');
+    taskCount.textContent = unfinishedTasks.length;
+}
+
 showTask();
+updateTaskCount();
